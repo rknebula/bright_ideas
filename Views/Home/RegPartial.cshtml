@@ -1,0 +1,31 @@
+@model bright_ideas.Models.RegViewModel
+<form  action="register" method="post">
+    <p>
+        <label asp-for="Name">Name: </label>
+        <input asp-for="Name"/>
+        <span asp-validation-for="Name"></span>
+    </p>
+    <p>
+        <label asp-for="Alias">Alias: </label>
+        <input asp-for="Alias"/>
+        <span asp-validation-for="Alias"></span>
+    </p>
+    <p>
+        <label asp-for="Email">Email: </label>
+        <input asp-for="Email"/>
+        <span asp-validation-for="Email"></span>
+    </p>
+    <p>
+        <label asp-for="Password">Password: </label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </p>
+    <p>
+        <label asp-for="PasswordConfirmation">Confirm Password: </label>
+        <input asp-for="PasswordConfirmation" type="password" />
+        <span asp-validation-for="PasswordConfirmation"></span>
+    </p>
+    <p>
+        <button type="submit">Register</button>
+    </p>
+</form>

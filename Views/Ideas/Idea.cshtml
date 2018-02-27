@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Idea";
+}
+
+<div class="idea">
+    <p>
+        <a href="/user/@ViewBag.Idea.UserId">@ViewBag.Idea.User.Alias</a> said at @ViewBag.Idea.CreatedAt
+        @if (ViewBag.Idea.UserId == @ViewBag.User.UserId)
+        {
+            <span><a href="/delete/@ViewBag.Idea.IdeaId">Delete</a></span>
+        }
+    </p>
+    <h4>@ViewBag.Idea.Description</h4>
+</div>
+<p>People who liked this post (@ViewBag.Idea.Likes.Count likes total):</p>
+<table>
+    <thead><tr>
+        <td>Alias</td>
+        <td>Name</td>
+    </tr></thead>
+    @foreach (var likes in @ViewBag.Likes)
+    {
+        <tr>
+            <td><a href="/user/@likes.User.UserId">@likes.User.Alias</a></td>
+            <td>@likes.User.Name</td>
+        </tr>
+    }
+</table>

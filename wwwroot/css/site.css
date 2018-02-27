@@ -1,0 +1,20 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+thead td {
+    font-weight: bold;
+}
+
+td {
+    padding-right: 15px;
+}
+
+.idea {
+    margin-bottom: 25px;
+}
+
+.like {
+    padding-right: 15px;
+}

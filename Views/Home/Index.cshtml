@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Login/Registration";
+}
+
+<h1>Welcome to the Dojo Activity Center</h1>
+
+<p>@ViewBag.Message</p>
+
+<h3>Login</h3>
+@Html.Partial("LogPartial", new LogViewModel())
+
+<hr>
+
+<h3>Registration</h3>
+@Html.Partial("RegPartial", new RegViewModel())

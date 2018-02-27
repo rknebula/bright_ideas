@@ -1,0 +1,12 @@
+@model bright_ideas.Models.IdeaViewModel
+
+<form action="addnew" method="post">
+    <p>
+        <label asp-for="Description">Description: </label>
+        <input asp-for="Description" placeholder="Something witty here..." />
+    </p>
+    <p asp-validation-for="Description"></p>
+    <p>
+        <button type="submit">Idea!</button>
+    </p>
+</form>

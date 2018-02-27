@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@model bright_ideas.Models.IdeaViewModel
+
+<h1>Hi @ViewBag.User.Alias!</h1>
+
+<hr>
+
+<form action="addnew" method="post">
+    <p>
+        <label asp-for="Description">Description: </label>
+        <input asp-for="Description" placeholder="Something witty here..." />
+        <button type="submit">Idea!</button>
+    </p>
+    <p asp-validation-for="Description"></p>
+</form>
+
+<hr>
+
+@{
+    foreach (var idea in ViewBag.AllIdeas)
+    {
+        <div class="idea">
+            <p><a href="/user/@idea.User.UserId">@idea.User.Alias</a> said at @idea.CreatedAt
+            @if (idea.UserId == @ViewBag.User.UserId)
+            {
+                <span><a href="/delete/@idea.IdeaId">Delete</a></span>
+            }
+            </p>
+            <h4>@idea.Description</h4>
+            <p><span class="like"><a href="/like/@idea.IdeaId">Like?</a></span> <span><a href="/idea/@idea.IdeaId">@idea.Likes.Count people</a> like this.</span></p>
+        </div>
+    }
+}

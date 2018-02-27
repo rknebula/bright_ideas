@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "User";
+}
+
+<p>Name: @ViewBag.CurUser.Name</p>
+<p>Alias: @ViewBag.CurUser.Alias</p>
+<p>Email: @ViewBag.CurUser.Email</p>
+<hr>
+<p>Total Number of Posts: @ViewBag.CurUser.Ideas.Count</p>
+<p>Total Number of Likes: @ViewBag.CurUser.Likes.Count</p>

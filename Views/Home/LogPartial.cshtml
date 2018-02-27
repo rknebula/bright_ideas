@@ -1,0 +1,17 @@
+@model bright_ideas.Models.LogViewModel
+
+<form action="login" method="post">
+    <p>
+        <label asp-for="LogEmail">Email: </label>
+        <input asp-for="LogEmail"/>
+        <span asp-validation-for="LogEmail"></span>
+    </p>
+    <p>
+        <label asp-for="LogPassword">Password: </label>
+        <input asp-for="LogPassword"/>
+        <span asp-validation-for="LogPassword"></span>
+    </p>
+    <p>
+        <button type="submit">Login</button>
+    </p>
+</form>
